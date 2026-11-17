@@ -1,0 +1,30 @@
+12/04/2026 07:58 - As mensagens e ligações são protegidas com a criptografia de ponta a ponta.
+12/04/2026 08:06 - Cliente: WA-0001 - oi, Transportes Boa Vista aqui. preciso levar 10 carros pra Florianópolis/SC, coleta 25-abr-2026
+12/04/2026 08:14 - Cliente: WA-0002 - #DEMANDA | Empresa: TRANSPORTADORA RODOSUL LTDA | CNPJ: 15.881.399/0001-34 | Origem: CASCAVEL - PR | Destino: Floripa/SC | Tipo: cegonheira | Qtd: 11 | Peso: 15,9 t | Valor: 14,6k | Coleta: 29/04/2026
+12/04/2026 08:29 - Cliente: WA-0003 - boa tarde, Automotiva Parana falando. 11 unidades de cascavel  pr pra FLORIANOPOLIS - SC, coleta 17-abr-2026, valor R$ 13.500,00
+12/04/2026 08:29 - Atendente: Bom dia! Vou verificar a disponibilidade e já retorno.
+12/04/2026 08:41 - Cliente: WA-0004 - Bom dia, tem caminhão saindo de Curitiba/PR essa semana? aqui é da Agropecuaria Santa Rita.
+12/04/2026 08:52 - Cliente: WA-0005 - #DEMANDA | Empresa: LOCADORA ESTRELA DO OESTE LTDA | CNPJ: 09.114.170/0001-71 | Origem: CURITIBA - PR | Destino: SAO PAULO - SP | Tipo: prancha baixa | Qtd: 2 | Peso: 2800 kg | Valor: R$ 6.600,00 | Coleta: 22/04/2026
+12/04/2026 09:04 - Cliente: WA-0006 - Bom dia! Aqui é da Concessionaria Vale Verde, tenho 3 veiculos saindo de Ctba/PR para Sampa/SP. Coleta dia 19-abr-2026. Pago 10.700,00
+12/04/2026 09:14 - Cliente: WA-0007 - oi, Frota Pampa aqui. preciso levar 7 carros de cascavel  pr pra Floripa/SC, coleta 04/25/2026, fecha em 8,3k?
+12/04/2026 09:29 - Cliente: WA-0008 - #DEMANDA | Empresa: MÁQUINAS E IMPLEMENTOS TOLEDO LTDA | CNPJ: 81.518.844/0001-20 | Origem: TOLEDO - PR | Destino: CURITIBA - PR | Tipo: BAU | Qtd: 1 | Peso: 20 t | Valor: 14.600,00 | Coleta: 21-abr-2026
+12/04/2026 09:38 - Cliente: WA-0009 - Marcos Particular aqui, preciso cotar 3 carros, me liga por favor
+12/04/2026 09:50 - Cliente: WA-0010 - oi, Pampa Frotas aqui. preciso levar 1 carros de FOZ DO IGUACU - PR pra POA/RS, coleta 15/04/2026, fecha em R$ 1.800,00?
+12/04/2026 10:06 - Cliente: WA-0011 - #DEMANDA | Empresa: LEILÕES IGUAÇU VEÍCULOS EIRELI | CNPJ: 61.698.716/0001-07 | Origem: Foz/PR | Destino: Campo Grande/MS | Tipo: GRANELEIRO | Qtd: 1 | Peso: 25,5 t | Valor: 2600 | Coleta: 07/05/2026
+12/04/2026 10:06 - Atendente: Bom dia! Vou verificar a disponibilidade e já retorno.
+12/04/2026 10:19 - Cliente: WA-0012 - Bom dia! Aqui é da Revenda Sul Motos, tenho 2 veiculos saindo de Maringá/PR para Goiânia/GO. Coleta dia 05/05/2026. Pago 14,0k
+12/04/2026 10:26 - Cliente: WA-0013 - oi, Logistica Nova Era aqui. preciso levar 11 carros pra Belo Horizonte/MG, coleta 22/04/2026
+12/04/2026 10:41 - Cliente: WA-0014 - Bom dia! Aqui é da Transp Rodosul, tenho 4 veiculos saindo de Londrina/PR para Rio de Janeiro/RJ. Coleta dia 29/04/2026. Pago 9,3k
+12/04/2026 10:41 - Cliente: WA-0014 - <Mídia oculta>
+12/04/2026 10:50 - Cliente: WA-0015 - #DEMANDA | Empresa: AUTOMOTIVA PARANÁ VEÍCULOS S.A. | CNPJ: 86.987.973/0001-81 | Origem: Ponta Grossa/PR | Destino: Florianópolis/SC | Tipo: Cegonha | Qtd: 2 | Peso: 2,3 t | Valor: 11400 | Coleta: 15/04/2026
+12/04/2026 11:04 - Cliente: WA-0016 - oi, Auto Center Bom Jesus aqui. preciso levar 3 carros de PONTA GROSSA - PR pra Floripa/SC, coleta 04-mai-2026, fecha em 9.800,00?
+12/04/2026 11:18 - Cliente: WA-0017 - #DEMANDA | Empresa: LOCADORA ESTRELA DO OESTE LTDA | CNPJ: 09.114.170/0001-71 | Origem: Chapecó/SC | Destino: FLORIANOPOLIS - SC | Tipo: prancha baixa | Qtd: 2 | Peso: 2900 kg | Valor: 5.800,00 | Coleta: 17-abr-2026
+12/04/2026 11:29 - Cliente: WA-0018 - Bom dia, tem caminhão saindo de CHAPECO - SC essa semana? aqui é da Fazenda Sao Jorge.
+12/04/2026 11:42 - Cliente: WA-0019 - Bom dia! Aqui é da Vale Verde, tenho 3 veiculos saindo de Joinville/SC para SAO PAULO - SP. Coleta dia 03/05/2026. Pago 2.600,00
+12/04/2026 11:42 - Atendente: Bom dia! Vou verificar a disponibilidade e já retorno.
+12/04/2026 11:55 - Cliente: WA-0020 - #DEMANDA | Empresa: COOPERATIVA AGROINDUSTRIAL CAMPOS GERAIS | CNPJ: 24.883.107/0001-93 | Origem: Porto Alegre/RS | Destino: Sampa/SP | Tipo: BAU | Qtd: 3 | Peso: 27,5 t | Valor: 2,0k | Coleta: 17/04/2026
+12/04/2026 12:05 - Cliente: WA-0021 - Bom dia! Aqui é da Mecanica Irmaos Kuhn, tenho 2 veiculos saindo de POA/RS para Curitiba/PR. Coleta dia 30-abr-2026. Pago R$ 12.300,00
+12/04/2026 12:17 - Cliente: WA-0022 - Distribuidora Pecas Norte aqui, preciso cotar 1 carros, me liga por favor
+12/04/2026 12:30 - Cliente: WA-0023 - boa tarde, Maquinas Implementos Toledo falando. 2 unidades de São Paulo/SP pra Porto Alegre/RS, coleta 23/04/2026, valor 6.000,00
+12/04/2026 12:39 - Cliente: WA-0024 - #DEMANDA | Empresa: PAMPA GESTÃO DE FROTAS LTDA | CNPJ: 72.940.557/0001-13 | Origem: Campinas/SP | Destino: POA/RS | Tipo: FRIGORIFICO | Qtd: 3 | Peso: 14500 kg | Valor: R$ 3.900,00 | Coleta: 10/05/2026
+12/04/2026 12:52 - Cliente: WA-0025 - boa tarde, Tratores Planalto falando. 7 unidades de Cascavel/PR pra Campo Grande/MS, coleta 13-abr-2026, valor 6,1k

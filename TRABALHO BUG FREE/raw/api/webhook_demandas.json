@@ -1,0 +1,625 @@
+[
+  {
+    "evento": "demanda.criada",
+    "enviado_em": "2026-04-12T09:07:00-03:00",
+    "payload": {
+      "id": "API-0001",
+      "customer": {
+        "name": "LOCADORA ESTRELA DO OESTE LTDA",
+        "document": "09114170000171"
+      },
+      "route": {
+        "from": "Caxias do Sul/RS",
+        "to": "São Paulo/SP"
+      },
+      "cargo": {
+        "type": "SIDER",
+        "units": 2,
+        "weight": "17 t"
+      },
+      "price": 13200,
+      "pickup_date": "2026-05-03T08:00:00Z",
+      "status": "cancelada"
+    }
+  },
+  {
+    "evento": "demanda.criada",
+    "enviado_em": "2026-04-12T10:14:00-03:00",
+    "payload": {
+      "id": "API-0002",
+      "customer": {
+        "name": "CONCESSIONÁRIA VALE VERDE LTDA",
+        "document": "75364556000166"
+      },
+      "route": {
+        "from": "São Paulo/SP",
+        "to": "SAO PAULO - SP"
+      },
+      "cargo": {
+        "type": "GRANELEIRO",
+        "units": 3,
+        "weight": "24,5 t"
+      },
+      "price": 9400.0,
+      "pickup_date": "2026-04-19T08:00:00Z",
+      "status": "CONCLUIDA"
+    }
+  },
+  {
+    "evento": "demanda.criada",
+    "enviado_em": "2026-04-12T11:21:00-03:00",
+    "payload": {
+      "id": "API-0003",
+      "customer": {
+        "name": "COOPERATIVA AGROINDUSTRIAL CAMPOS GERAIS",
+        "document": "24883107000193"
+      },
+      "route": {
+        "from": "Campinas/SP",
+        "to": "Sampa/SP"
+      },
+      "cargo": {
+        "type": "FRIGORIFICO",
+        "units": 1,
+        "weight": "21,5 t"
+      },
+      "price": "1600.00",
+      "pickup_date": "2026-04-24T08:00:00Z",
+      "status": "nova"
+    }
+  },
+  {
+    "evento": "demanda.criada",
+    "enviado_em": "2026-04-12T12:28:00-03:00",
+    "payload": {
+      "id": "API-0004",
+      "customer": {
+        "name": "MÁQUINAS E IMPLEMENTOS TOLEDO LTDA",
+        "document": "81518844000120"
+      },
+      "route": {
+        "from": "Cascavel/PR",
+        "to": "Curitiba/PR"
+      },
+      "cargo": {
+        "type": "CEGONHA",
+        "units": 2,
+        "weight": "3200 kg"
+      },
+      "price": 5900,
+      "pickup_date": "2026-04-15T08:00:00Z",
+      "status": "NOVO"
+    }
+  },
+  {
+    "evento": "demanda.criada",
+    "enviado_em": "2026-04-12T13:35:00-03:00",
+    "payload": {
+      "id": "API-0005",
+      "customer": {
+        "name": "PAMPA GESTÃO DE FROTAS LTDA",
+        "document": "72940557000113"
+      },
+      "route": {
+        "from": "CASCAVEL - PR",
+        "to": "CURITIBA - PR"
+      },
+      "cargo": {
+        "type": "cegonheira",
+        "units": 4,
+        "weight": 6600
+      },
+      "price": "4000.00",
+      "pickup_date": "2026-04-13T08:00:00Z",
+      "status": "aberta"
+    }
+  },
+  {
+    "evento": "demanda.criada",
+    "enviado_em": "2026-04-13T14:42:00-03:00",
+    "payload": {
+      "id": "API-0006",
+      "customer": {
+        "name": "LEILÕES IGUAÇU VEÍCULOS EIRELI",
+        "document": "61698716000107"
+      },
+      "route": {
+        "from": "cascavel  pr",
+        "to": "Porto Alegre/RS"
+      },
+      "cargo": {
+        "type": "Cegonha",
+        "units": 11,
+        "weight": "12,1 t"
+      },
+      "price": "11500.00",
+      "pickup_date": "2026-04-25",
+      "status": "em análise"
+    }
+  },
+  {
+    "evento": "demanda.criada",
+    "enviado_em": "2026-04-13T15:49:00-03:00",
+    "payload": {
+      "id": "API-0007",
+      "customer": {
+        "name": "TRANSPORTADORA RODOSUL LTDA",
+        "document": "15881399000134"
+      },
+      "route": {
+        "from": "Curitiba/PR",
+        "to": "POA/RS"
+      },
+      "cargo": {
+        "type": "PRANCHA",
+        "units": 3,
+        "weight": "3450 kg"
+      },
+      "price": "3600.00",
+      "pickup_date": "2026-04-17T08:00:00Z",
+      "status": "EM_ANALISE"
+    }
+  },
+  {
+    "evento": "demanda.criada",
+    "enviado_em": "2026-04-13T16:56:00-03:00",
+    "payload": {
+      "id": "API-0008",
+      "customer": {
+        "name": "AUTOMOTIVA PARANÁ VEÍCULOS S.A.",
+        "document": "86987973000181"
+      },
+      "route": {
+        "from": "CURITIBA - PR",
+        "to": "Campo Grande/MS"
+      },
+      "cargo": {
+        "type": "prancha baixa",
+        "units": 3,
+        "weight": "3,9 t"
+      },
+      "price": "9400.00",
+      "pickup_date": "2026-04-14",
+      "status": "cotada"
+    }
+  },
+  {
+    "evento": "demanda.criada",
+    "enviado_em": "2026-04-13T08:03:00-03:00",
+    "payload": {
+      "id": "API-0009",
+      "customer": {
+        "name": "LOCADORA ESTRELA DO OESTE LTDA",
+        "document": "09114170000171"
+      },
+      "route": {
+        "from": "Ctba/PR",
+        "to": "Goiânia/GO"
+      },
+      "cargo": {
+        "type": "GUINCHO",
+        "units": 1,
+        "weight": "1300 kg"
+      },
+      "price": 9000,
+      "pickup_date": "2026-04-30",
+      "status": "COTADO"
+    }
+  },
+  {
+    "evento": "demanda.criada",
+    "enviado_em": "2026-04-13T08:03:30-03:00",
+    "payload": {
+      "id": "API-0005",
+      "customer": {
+        "name": "PAMPA GESTÃO DE FROTAS LTDA",
+        "document": "72940557000113"
+      },
+      "route": {
+        "from": "CASCAVEL - PR",
+        "to": "CURITIBA - PR"
+      },
+      "cargo": {
+        "type": "cegonheira",
+        "units": 4,
+        "weight": 6600
+      },
+      "price": "4000.00",
+      "pickup_date": "2026-04-13T08:00:00Z",
+      "status": "aberta"
+    },
+    "tentativa": 2
+  },
+  {
+    "evento": "demanda.criada",
+    "enviado_em": "2026-04-13T09:10:00-03:00",
+    "payload": {
+      "id": "API-0010",
+      "customer": {
+        "name": "CONCESSIONÁRIA VALE VERDE LTDA",
+        "document": "75364556000166"
+      },
+      "route": {
+        "from": "Toledo/PR",
+        "to": "Belo Horizonte/MG"
+      },
+      "cargo": {
+        "type": "Guincho/plataforma",
+        "units": 2,
+        "weight": "2,5 t"
+      },
+      "price": "1700.00",
+      "pickup_date": "2026-05-10T08:00:00Z",
+      "status": "aprovada"
+    }
+  },
+  {
+    "evento": "demanda.criada",
+    "enviado_em": "2026-04-13T10:17:00-03:00",
+    "payload": {
+      "id": "API-0011",
+      "customer": {
+        "name": "COOPERATIVA AGROINDUSTRIAL CAMPOS GERAIS",
+        "document": "24883107000193"
+      },
+      "route": {
+        "from": "TOLEDO - PR",
+        "to": "Rio de Janeiro/RJ"
+      },
+      "cargo": {
+        "type": "BAU",
+        "units": 2,
+        "weight": 17000
+      },
+      "price": "5800.00",
+      "pickup_date": "2026-05-06",
+      "status": "agendada"
+    }
+  },
+  {
+    "evento": "demanda.criada",
+    "enviado_em": "2026-04-14T11:24:00-03:00",
+    "payload": {
+      "id": "API-0012",
+      "customer": {
+        "name": "MÁQUINAS E IMPLEMENTOS TOLEDO LTDA",
+        "document": "81518844000120"
+      },
+      "route": {
+        "from": "Foz do Iguaçu/PR",
+        "to": "Florianópolis/SC"
+      },
+      "cargo": {
+        "type": "baú",
+        "units": 2,
+        "weight": 23000
+      },
+      "price": 5200.0,
+      "pickup_date": "2026-04-18",
+      "status": "cancelada"
+    }
+  },
+  {
+    "evento": "demanda.criada",
+    "enviado_em": "2026-04-14T12:31:00-03:00",
+    "payload": {
+      "id": "API-0013",
+      "customer": {
+        "name": "Agropecuaria Santa Rita",
+        "document": "38299321000101"
+      },
+      "route": {
+        "from": "FOZ DO IGUACU - PR",
+        "to": "Floripa/SC"
+      },
+      "cargo": {
+        "type": "SIDER",
+        "units": 2,
+        "weight": "8000 kg"
+      },
+      "price": 10900,
+      "pickup_date": "2026-04-22",
+      "status": "CONCLUIDA"
+    }
+  },
+  {
+    "evento": "demanda.criada",
+    "enviado_em": "2026-04-14T13:38:00-03:00",
+    "payload": {
+      "id": "API-0014",
+      "customer": {
+        "name": "PAMPA GESTÃO DE FROTAS LTDA",
+        "document": "72940557000113"
+      },
+      "route": {
+        "from": "Foz/PR",
+        "to": "FLORIANOPOLIS - SC"
+      },
+      "cargo": {
+        "type": "GRANELEIRO",
+        "units": 3,
+        "weight": "8000 kg"
+      },
+      "price": "11200.00",
+      "pickup_date": "2026-04-21",
+      "status": "nova"
+    }
+  },
+  {
+    "evento": "demanda.criada",
+    "enviado_em": "2026-04-14T14:45:00-03:00",
+    "payload": {
+      "id": "API-0015",
+      "customer": {
+        "name": "LEILÕES IGUAÇU VEÍCULOS EIRELI",
+        "document": "61698716000107"
+      },
+      "route": {
+        "from": "Maringá/PR",
+        "to": "São Paulo/SP"
+      },
+      "cargo": {
+        "type": "FRIGORIFICO",
+        "units": 2,
+        "weight": "21 t"
+      },
+      "price": "14200.00",
+      "pickup_date": "2026-04-16",
+      "status": "NOVO"
+    }
+  },
+  {
+    "evento": "demanda.criada",
+    "enviado_em": "2026-04-14T15:52:00-03:00",
+    "payload": {
+      "id": "API-0016",
+      "customer": {
+        "name": "TRANSPORTADORA RODOSUL LTDA",
+        "document": "15881399000134"
+      },
+      "route": {
+        "from": "MARINGA - PR",
+        "to": "SAO PAULO - SP"
+      },
+      "cargo": {
+        "type": "CEGONHA",
+        "units": 7,
+        "weight": 11200
+      },
+      "price": 13100,
+      "pickup_date": "2026-05-01",
+      "status": "aberta"
+    }
+  },
+  {
+    "evento": "demanda.criada",
+    "enviado_em": "2026-04-14T16:59:00-03:00",
+    "payload": {
+      "id": "API-0017",
+      "customer": {
+        "name": "AUTOMOTIVA PARANÁ VEÍCULOS S.A.",
+        "document": "86987973000181"
+      },
+      "route": {
+        "from": "Londrina/PR",
+        "to": "Sampa/SP"
+      },
+      "cargo": {
+        "type": "cegonheira",
+        "units": 3,
+        "weight": 4350
+      },
+      "price": "9400.00",
+      "pickup_date": "2026-04-21",
+      "status": "em análise"
+    }
+  },
+  {
+    "evento": "demanda.criada",
+    "enviado_em": "2026-04-15T08:06:00-03:00",
+    "payload": {
+      "id": "API-0018",
+      "customer": {
+        "name": "LOCADORA ESTRELA DO OESTE LTDA",
+        "document": "09114170000171"
+      },
+      "route": {
+        "from": "Ponta Grossa/PR",
+        "to": "Curitiba/PR"
+      },
+      "cargo": {
+        "type": "Cegonha",
+        "units": 7,
+        "weight": "9800 kg"
+      },
+      "price": 14400,
+      "pickup_date": "2026-04-30T08:00:00Z",
+      "status": "EM_ANALISE"
+    }
+  },
+  {
+    "evento": "demanda.criada",
+    "enviado_em": "2026-04-15T09:13:00-03:00",
+    "payload": {
+      "id": "API-0019",
+      "customer": {
+        "name": "CONCESSIONÁRIA VALE VERDE LTDA",
+        "document": "75364556000166"
+      },
+      "route": {
+        "from": "PONTA GROSSA - PR",
+        "to": "CURITIBA - PR"
+      },
+      "cargo": {
+        "type": "PRANCHA",
+        "units": 2,
+        "weight": 2700
+      },
+      "price": 6000,
+      "pickup_date": "2026-04-19T08:00:00Z",
+      "status": "cotada"
+    }
+  },
+  {
+    "evento": "demanda.criada",
+    "enviado_em": "2026-04-15T10:20:00-03:00",
+    "payload": {
+      "id": "API-0020",
+      "customer": {
+        "name": "COOPERATIVA AGROINDUSTRIAL CAMPOS GERAIS",
+        "document": "24883107000193"
+      },
+      "route": {
+        "from": "Chapecó/SC",
+        "to": "Porto Alegre/RS"
+      },
+      "cargo": {
+        "type": "prancha baixa",
+        "units": 2,
+        "weight": "2800 kg"
+      },
+      "price": 11200.0,
+      "pickup_date": "2026-04-19",
+      "status": "COTADO"
+    }
+  },
+  {
+    "evento": "demanda.criada",
+    "enviado_em": "2026-04-15T10:20:30-03:00",
+    "payload": {
+      "id": "API-0017",
+      "customer": {
+        "name": "AUTOMOTIVA PARANÁ VEÍCULOS S.A.",
+        "document": "86987973000181"
+      },
+      "route": {
+        "from": "Londrina/PR",
+        "to": "Sampa/SP"
+      },
+      "cargo": {
+        "type": "cegonheira",
+        "units": 3,
+        "weight": 4350
+      },
+      "price": "9400.00",
+      "pickup_date": "2026-04-21",
+      "status": "em análise"
+    },
+    "tentativa": 2
+  },
+  {
+    "evento": "demanda.criada",
+    "enviado_em": "2026-04-15T11:27:00-03:00",
+    "payload": {
+      "id": "API-0021",
+      "customer": {
+        "name": "MÁQUINAS E IMPLEMENTOS TOLEDO LTDA",
+        "document": "81518844000120"
+      },
+      "route": {
+        "from": "CHAPECO - SC",
+        "to": "POA/RS"
+      },
+      "cargo": {
+        "type": "GUINCHO",
+        "units": 2,
+        "weight": "2600 kg"
+      },
+      "price": 9900.0,
+      "pickup_date": "2026-05-09T08:00:00Z",
+      "status": "aprovada"
+    }
+  },
+  {
+    "evento": "demanda.criada",
+    "enviado_em": "2026-04-15T12:34:00-03:00",
+    "payload": {
+      "id": "API-0022",
+      "customer": {
+        "name": "PAMPA GESTÃO DE FROTAS LTDA",
+        "document": "72940557000113"
+      },
+      "route": {
+        "from": "Joinville/SC",
+        "to": "Campo Grande/MS"
+      },
+      "cargo": {
+        "type": "Guincho/plataforma",
+        "units": 2,
+        "weight": "2600 kg"
+      },
+      "price": "5200.00",
+      "pickup_date": "2026-04-30",
+      "status": "agendada"
+    }
+  },
+  {
+    "evento": "demanda.criada",
+    "enviado_em": "2026-04-15T13:41:00-03:00",
+    "payload": {
+      "id": "API-0023",
+      "customer": {
+        "name": "LEILÕES IGUAÇU VEÍCULOS EIRELI",
+        "document": "61698716000107"
+      },
+      "route": {
+        "from": "Porto Alegre/RS",
+        "to": "Goiânia/GO"
+      },
+      "cargo": {
+        "type": "BAU",
+        "units": 2,
+        "weight": "10,5 t"
+      },
+      "price": 4600,
+      "pickup_date": "2026-04-21T08:00:00Z",
+      "status": "cancelada"
+    }
+  },
+  {
+    "evento": "demanda.criada",
+    "enviado_em": "2026-04-16T14:48:00-03:00",
+    "payload": {
+      "id": "API-0024",
+      "customer": {
+        "name": "TRANSPORTADORA RODOSUL LTDA",
+        "document": "15881399000134"
+      },
+      "route": {
+        "from": "POA/RS",
+        "to": "Belo Horizonte/MG"
+      },
+      "cargo": {
+        "type": "baú",
+        "units": 3,
+        "weight": "18,5 t"
+      },
+      "price": "11700.00",
+      "pickup_date": "2026-04-13T08:00:00Z",
+      "status": "CONCLUIDA"
+    }
+  },
+  {
+    "evento": "demanda.criada",
+    "enviado_em": "2026-04-16T15:55:00-03:00",
+    "payload": {
+      "id": "API-0025",
+      "customer": {
+        "name": "AUTOMOTIVA PARANÁ VEÍCULOS S.A.",
+        "document": "86987973000181"
+      },
+      "route": {
+        "from": "Caxias do Sul/RS",
+        "to": "Rio de Janeiro/RJ"
+      },
+      "cargo": {
+        "type": "SIDER",
+        "units": 3,
+        "weight": "19000 kg"
+      },
+      "price": "10100.00",
+      "pickup_date": "2026-04-16",
+      "status": "nova"
+    }
+  }
+]

@@ -1,0 +1,11 @@
+id_demanda,canal,cliente_nome,cnpj,origem_cidade,origem_uf,destino_cidade,destino_uf,tipo_carga,qtd_unidades,peso_kg,valor_frete,data_coleta,data_ambigua,status,cliente_id,metodo_vinculo,score_vinculo
+WA-0012,whatsapp,Revenda Sul Motos,,Maringa,PR,Goiania,GO,,2,,14000.0,2026-05-05,False,NOVA,,SEM_MATCH,0.489
+WA-0016,whatsapp,Auto Center Bom Jesus,,Ponta Grossa,PR,Florianopolis,SC,,3,,9800.0,2026-05-04,False,NOVA,,SEM_MATCH,0.345
+WA-0021,whatsapp,Mecanica Irmaos Kuhn,,Porto Alegre,RS,Curitiba,PR,,2,,12300.0,2026-04-30,False,NOVA,,SEM_MATCH,0.35
+WA-0025,whatsapp,Tratores Planalto,,Cascavel,PR,Campo Grande,MS,,7,,6100.0,2026-04-13,False,NOVA,,SEM_MATCH,0.488
+EM-0011,email,Transportes Boa Vista,,Maringa,PR,Curitiba,PR,FRIGORIFICO,3,9500.0,9100.0,2026-05-07,True,CONCLUIDA,,SEM_MATCH,0.571
+API-0013,api,Agropecuaria Santa Rita,38299321000101,Foz do Iguacu,PR,Florianopolis,SC,SIDER,2,8000.0,10900.0,2026-04-22,False,CONCLUIDA,,SEM_MATCH,0.459
+CSV-0005,arquivo,MARCOS PARTICULAR,,Cascavel,PR,Sao Paulo,SP,CEGONHA,10,11000.0,3900.0,2026-04-17,False,COTADA,,SEM_MATCH,0.444
+CSV-0012,arquivo,Revenda Sul Motos,,Foz do Iguacu,PR,Goiania,GO,SIDER,2,8000.0,14500.0,2026-05-04,True,NOVA,,SEM_MATCH,0.489
+CSV-0018,arquivo,Logistica Nova Era,,Ponta Grossa,PR,Sao Paulo,SP,PRANCHA,3,3600.0,4800.0,2026-05-08,True,APROVADA,,SEM_MATCH,0.5
+CSV-0026,arquivo,AUTO CENTER BOM JESUS,,Campinas,SP,Goiania,GO,FRIGORIFICO,3,12000.0,4400.0,2026-05-07,True,EM_ANALISE,,SEM_MATCH,0.345

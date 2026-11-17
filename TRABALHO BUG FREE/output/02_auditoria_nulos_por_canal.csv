@@ -1,0 +1,6 @@
+canal,cliente_nome,cnpj,origem,destino,tipo_carga,qtd_unidades,peso,valor_frete,data_coleta,status
+api,0,0,0,0,0,0,0,0,0,0
+arquivo,0,5,0,0,0,0,0,0,0,0
+email,0,2,0,0,0,0,0,0,0,0
+pdf,0,1,0,0,0,0,0,0,0,0
+whatsapp,2,17,4,4,17,2,17,6,4,25
