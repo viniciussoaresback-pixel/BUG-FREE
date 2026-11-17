@@ -1,0 +1,21 @@
+coluna,formato,qtd
+valor_frete,"R$ 1.500,00",35
+valor_frete,"1.500,00",27
+valor_frete,1500,20
+valor_frete,1500.00,19
+valor_frete,ausente,6
+valor_frete,"1,5k",6
+peso,toneladas,36
+peso,kg,34
+peso,sem unidade,26
+peso,ausente,17
+cnpj,mascarado,44
+cnpj,cru (so numeros),40
+cnpj,ausente,25
+cnpj,truncado,4
+data_coleta,DD/MM/AAAA (ou MM/DD),50
+data_coleta,DD/MM/AA,24
+data_coleta,AAAA-MM-DD,14
+data_coleta,AAAA-MM-DDThh:mm,13
+data_coleta,DD-mmm-AAAA,8
+data_coleta,ausente,4

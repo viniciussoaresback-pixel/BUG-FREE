@@ -1,0 +1,4 @@
+# Netlify: publica so a pagina do MVP, sem etapa de build.
+# A pagina e gerada pelo main.py (rodar no computador e mandar para o GitHub).
+[build]
+  publish = "TRABALHO BUG FREE/site"

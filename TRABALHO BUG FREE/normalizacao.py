@@ -271,8 +271,8 @@ def normalizar(df_bruto):
     return df
 
 
-def aplicar_exclusoes(df):
-    """Separa base valida e descartes. Todo descarte sai com motivo."""
+def motivos_de_exclusao(df):
+    """Motivo de cada linha, na mesma ordem da tabela (None = fica na base)."""
     motivos = []
     vistos = set()
     for reg in df.to_dict("records"):
@@ -285,8 +285,12 @@ def aplicar_exclusoes(df):
             motivo = "quantidade de unidades invalida"
         vistos.add(reg["id_demanda"])
         motivos.append(motivo)
+    return motivos
 
-    df = df.assign(motivo=motivos)
+
+def aplicar_exclusoes(df):
+    """Separa base valida e descartes. Todo descarte sai com motivo."""
+    df = df.assign(motivo=motivos_de_exclusao(df))
     base = df[df["motivo"].isna()].drop(columns="motivo").reset_index(drop=True)
     descartes = df[df["motivo"].notna()][["id_demanda", "canal", "motivo"]].reset_index(drop=True)
     return base, descartes

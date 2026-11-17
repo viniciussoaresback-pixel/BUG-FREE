@@ -1,0 +1,42 @@
+== INGESTAO ==
+  whatsapp     25
+  email        20
+  api          27
+  arquivo      29
+  pdf          12
+  total       113 registros brutos
+
+== AUDITORIA (antes da limpeza) ==
+  origem       24 distintos  x   13 reais
+  destino      14 distintos  x    8 reais
+  tipo_carga   12 distintos  x    7 reais
+  status       11 distintos  x    7 reais
+  valor_frete 5 formatos: R$ 1.500,00 (35) | 1.500,00 (27) | 1500 (20) | 1500.00 (19) | 1,5k (6)
+  peso        3 formatos: toneladas (36) | kg (34) | sem unidade (26)
+  cnpj        3 formatos: mascarado (44) | cru (so numeros) (40) | truncado (4)
+  ids repetidos: API-0005, API-0017
+
+== EXCLUSAO DIRECIONADA ==
+  rota incompleta ou nao parseavel       6
+  duplicata tecnica (id reenviado)       2
+  quantidade de unidades invalida        2
+  10 de 113 excluidos, todos com motivo em descartes.csv
+  datas ambiguas (dd/mm ou mm/dd) mantidas e marcadas: 27
+
+== RESULTADO ==
+  113 brutos -> 10 descartados -> 103 base final -> 93 vinculados ao CRM
+  aproveitamento automatico: 91,2%
+  CNPJ         78   75,7%
+  FUZZY        15   14,6%
+  SEM_MATCH    10    9,7%
+
+  calibracao do limiar (fuzzy, demandas sem CNPJ valido) - escolhido: 0.75
+    0.50  vinculados= 17  sem_match=  8
+    0.55  vinculados= 16  sem_match=  9
+    0.60  vinculados= 15  sem_match= 10
+    0.65  vinculados= 15  sem_match= 10
+    0.70  vinculados= 15  sem_match= 10
+    0.75  vinculados= 15  sem_match= 10
+    0.80  vinculados= 14  sem_match= 11
+    0.85  vinculados= 14  sem_match= 11
+    0.90  vinculados= 14  sem_match= 11

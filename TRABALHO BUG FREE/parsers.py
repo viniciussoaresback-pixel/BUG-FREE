@@ -113,6 +113,7 @@ def ler_whatsapp(caminho=PASTA_RAW / "whatsapp" / "conversa_exportada.txt"):
             if "<Mídia oculta>" in msg:
                 continue  # foto/audio, nao tem como ler
             reg = registro_vazio(id_wa, "whatsapp")
+            reg["trecho_original"] = linha.strip()
             if msg.upper().startswith("#DEMANDA"):
                 _wa_template(msg, reg)
             else:
@@ -172,7 +173,12 @@ def ler_emails(pasta=PASTA_RAW / "email"):
         leitor.feed(arquivo.read_text(encoding="utf-8"))
         cabecalho, *linhas = leitor.linhas
         for linha in linhas:
-            registros.append(_mapear(dict(zip(cabecalho, linha)), MAPA_EMAIL, "email", "Nº Pedido"))
+            reg = _mapear(dict(zip(cabecalho, linha)), MAPA_EMAIL, "email", "Nº Pedido")
+            reg["trecho_original"] = (
+                "<tr>" + "".join(f"<th>{c}</th>" for c in cabecalho) + "</tr>\n"
+                "<tr>" + "".join(f"<td>{c}</td>" for c in linha) + "</tr>"
+            )
+            registros.append(reg)
     return registros
 
 
@@ -198,6 +204,7 @@ def ler_api(caminho=PASTA_RAW / "api" / "webhook_demandas.json"):
         reg["valor_frete"] = _texto(p.get("price"))
         reg["data_coleta"] = _texto(p.get("pickup_date"))
         reg["status"] = _texto(p.get("status"))
+        reg["trecho_original"] = json.dumps(ev, ensure_ascii=False, indent=2)
         registros.append(reg)
     return registros
 
@@ -220,8 +227,14 @@ MAPA_CSV = {
 
 
 def ler_planilha(caminho=PASTA_RAW / "planilha" / "fretes_legado.csv"):
+    registros = []
     with open(caminho, encoding="latin-1", newline="") as arq:
-        return [_mapear(linha, MAPA_CSV, "arquivo", "COD") for linha in csv.DictReader(arq, delimiter=";")]
+        leitor = csv.DictReader(arq, delimiter=";")
+        for linha in leitor:
+            reg = _mapear(linha, MAPA_CSV, "arquivo", "COD")
+            reg["trecho_original"] = ";".join(leitor.fieldnames) + "\n" + ";".join(linha[c] or "" for c in leitor.fieldnames)
+            registros.append(reg)
+    return registros
 
 
 # ---------------------------------------------------------------- 5. Ordem de coleta (PDF)
@@ -249,7 +262,9 @@ def ler_pdf(caminho=PASTA_RAW / "ordem_coleta" / "ordens_coleta.pdf"):
                 tabela = [[(c or "").replace("\n", " ") for c in linha] for linha in tabela]
                 cabecalho, *linhas = tabela
                 for linha in linhas:
-                    registros.append(_mapear(dict(zip(cabecalho, linha)), MAPA_PDF, "pdf", "OC"))
+                    reg = _mapear(dict(zip(cabecalho, linha)), MAPA_PDF, "pdf", "OC")
+                    reg["trecho_original"] = " | ".join(cabecalho) + "\n" + " | ".join(linha)
+                    registros.append(reg)
     return registros
 
 

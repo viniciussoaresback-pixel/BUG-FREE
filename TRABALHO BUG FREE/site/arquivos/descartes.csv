@@ -1,0 +1,11 @@
+id_demanda,canal,motivo
+WA-0001,whatsapp,rota incompleta ou nao parseavel
+WA-0004,whatsapp,rota incompleta ou nao parseavel
+WA-0009,whatsapp,rota incompleta ou nao parseavel
+WA-0013,whatsapp,rota incompleta ou nao parseavel
+WA-0018,whatsapp,rota incompleta ou nao parseavel
+WA-0022,whatsapp,rota incompleta ou nao parseavel
+API-0005,api,duplicata tecnica (id reenviado)
+API-0017,api,duplicata tecnica (id reenviado)
+CSV-0008,arquivo,quantidade de unidades invalida
+CSV-0021,arquivo,quantidade de unidades invalida

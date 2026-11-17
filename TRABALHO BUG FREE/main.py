@@ -7,6 +7,7 @@ import pandas as pd
 
 import auditoria
 import crm
+import exportar_site
 import normalizacao
 import parsers
 from schema import CAMPOS
@@ -28,7 +29,8 @@ def main():
         relatorio.append(texto)
 
     # 01/02 - canais e leitores
-    df_bruto = pd.DataFrame(parsers.ler_todos(), columns=CAMPOS)
+    brutos = parsers.ler_todos()
+    df_bruto = pd.DataFrame(brutos, columns=CAMPOS)
     log("== INGESTAO ==")
     for canal, qtd in df_bruto["canal"].value_counts(sort=False).items():
         log(f"  {canal:<10} {qtd:>4}")
@@ -66,7 +68,8 @@ def main():
     base = crm.vincular(base, clientes)
     calib = crm.calibrar_limiar(base, clientes)
     calib.to_csv(SAIDA / "03_calibracao_limiar.csv", index=False)
-    crm.scores_sem_cnpj(base, clientes).to_csv(SAIDA / "03_scores_fuzzy.csv", index=False)
+    scores = crm.scores_sem_cnpj(base, clientes)
+    scores.to_csv(SAIDA / "03_scores_fuzzy.csv", index=False)
 
     # 06 - base final
     base.to_csv(SAIDA / "base_final.csv", index=False)
@@ -85,6 +88,11 @@ def main():
         log(f"    {r.limiar:.2f}  vinculados={r.vinculados_fuzzy:>3}  sem_match={r.sem_match:>3}")
 
     (SAIDA / "relatorio.txt").write_text("\n".join(relatorio) + "\n", encoding="utf-8")
+
+    # pagina com os resultados (e a pasta que o Netlify publica)
+    exportar_site.gerar(PASTA / "site", brutos, df_norm, base, clientes, card, fmts, calib, scores,
+                        crm.LIMIAR_PADRAO, SAIDA, PASTA / "raw")
+    print("\n  pagina atualizada: site/index.html")
 
 
 if __name__ == "__main__":

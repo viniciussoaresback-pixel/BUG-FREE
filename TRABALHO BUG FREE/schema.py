@@ -18,6 +18,10 @@ CAMPOS = [
     "status",
 ]
 
+# Fora do esquema: os leitores tambem guardam "trecho_original", o pedaco da fonte de onde
+# o registro saiu (linha do WhatsApp, linha da tabela, evento JSON...). Serve so para
+# conferir na pagina (site/); nao entra na base.
+
 
 def registro_vazio(id_demanda, canal):
     reg = dict.fromkeys(CAMPOS)

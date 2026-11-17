@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BUG FREE - HUB Integrador de Dados</title>
+<meta name="description" content="MVP do hub que lê, audita, limpa e vincula ao CRM as demandas de frete que chegam por cinco canais.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+<header class="topo">
+  <div class="largura">
+    <p class="topo-sobre">Projeto Univel x Rodomax · Data Science e Inteligência Artificial · 4º período</p>
+    <h1>BUG FREE · HUB Integrador de Dados</h1>
+    <p class="topo-sub">Motor de normalização e saneamento de demandas de frete recebidas por cinco canais heterogêneos.</p>
+    <p class="topo-equipe">Alessandro L. Lorensi, Eduardo Reway, João G. Reis, Kauã Foscarini e Vinicius Soares · Prof. Lucas Soares da Silva</p>
+    <nav class="topo-nav" aria-label="Seções da página">
+      <a href="#resultado">Resultado</a>
+      <a href="#canais">Canais</a>
+      <a href="#auditoria">Auditoria</a>
+      <a href="#arquitetura">Arquitetura</a>
+      <a href="#ingestao">Antes e depois</a>
+      <a href="#descartes">Descartes</a>
+      <a href="#crm">CRM</a>
+      <a href="#base">Base final</a>
+      <a href="#limitacoes">Limitações</a>
+    </nav>
+  </div>
+</header>
+
+<main class="largura">
+
+  <p class="aviso" id="aviso-dados" hidden>Não achei o arquivo <code>dados.js</code>. Rode <code>python main.py</code> na pasta do projeto para gerar os dados da página.</p>
+  <noscript><p class="aviso">Esta página precisa de JavaScript para montar as tabelas e os gráficos.</p></noscript>
+
+  <section class="secao" id="resultado">
+    <p class="secao-num">01 · Resultado</p>
+    <h2>Funil de aproveitamento do lote</h2>
+    <p class="intro">Lote analisado: <span data-funil="brutos">113</span> demandas brutas, recebidas pelos cinco canais. O pipeline lê cada canal, mede a bagunça, limpa, descarta o que não dá para aproveitar (sempre anotando o motivo) e liga cada demanda ao cadastro de clientes.</p>
+    <div class="resultado">
+      <p class="destaque-num"><strong id="aproveitamento">91,2%</strong><span>de aproveitamento automático</span></p>
+      <ol class="funil">
+        <li><strong data-funil="brutos">113</strong><span>brutos ingeridos</span></li>
+        <li><strong data-funil="descartados">10</strong><span>descartados com motivo</span></li>
+        <li><strong data-funil="base">103</strong><span>na base final unificada</span></li>
+        <li><strong data-funil="vinculados">93</strong><span>vinculados ao CRM</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="secao" id="canais">
+    <p class="secao-num">02 · O problema</p>
+    <h2>Cinco canais, uma planilha, um operador</h2>
+    <p class="intro">Hoje o operador abre cada fonte, interpreta o conteúdo e digita tudo numa planilha central. O gargalo não é o volume: é que cada canal escreve o mesmo dado de um jeito, ninguém sabe o que se perdeu no caminho e o custo cresce junto com o volume.</p>
+    <div class="rolagem">
+      <table id="tabela-canais">
+        <thead>
+          <tr><th>Canal</th><th>Como chega</th><th class="num">Registros</th><th class="col-barra"><span class="sr">barra</span></th><th class="num">Descartados</th><th class="num">Na base</th><th class="num">Vinculados</th></tr>
+        </thead>
+        <tbody></tbody>
+        <tfoot></tfoot>
+      </table>
+    </div>
+  </section>
+
+  <section class="secao" id="auditoria">
+    <p class="secao-num">03 · Diagnóstico</p>
+    <h2>A mesma informação, escrita de vários jeitos</h2>
+    <p class="intro">Medido pelo <code>auditoria.py</code> antes de qualquer correção. Esses números é que justificam cada regra da limpeza.</p>
+
+    <h3>Cardinalidade inflada</h3>
+    <p id="frase-origem" class="frase"></p>
+    <ul class="legenda">
+      <li><i class="mk redondo mk-claro"></i>valores distintos no dado bruto</li>
+      <li><i class="mk redondo mk-azul"></i>valores reais, depois da limpeza</li>
+    </ul>
+    <div class="halteres" id="halteres" role="img" aria-label="Valores distintos no bruto e valores reais por coluna"></div>
+
+    <h3>Formatos concorrentes na mesma coluna</h3>
+    <div class="formatos" id="formatos"></div>
+  </section>
+
+  <section class="secao" id="arquitetura">
+    <p class="secao-num">04 · Arquitetura</p>
+    <h2>Uma linha de produção em seis estágios</h2>
+    <ol class="etapas">
+      <li><span class="n">01</span><strong>Canais</strong><span class="desc">5 fontes brutas</span><code>raw/</code></li>
+      <li><span class="n">02</span><strong>Leitores</strong><span class="desc">extraem e mapeiam</span><code>parsers.py</code></li>
+      <li><span class="n">03</span><strong>Auditoria</strong><span class="desc">mede a bagunça</span><code>auditoria.py</code></li>
+      <li><span class="n">04</span><strong>Limpeza</strong><span class="desc">normaliza e descarta</span><code>normalizacao.py</code></li>
+      <li><span class="n">05</span><strong>CRM</strong><span class="desc">vincula ao cadastro</span><code>crm.py</code></li>
+      <li><span class="n">06</span><strong>Base final</strong><span class="desc"><span data-funil="base">103</span> registros</span><code>output/</code></li>
+    </ol>
+    <p class="intro">Parser não limpa; limpador não parseia. O esquema único (<code>schema.py</code>) é o único acoplamento entre as camadas, então um canal novo custa uma função de leitura e nada mais. O canal PDF foi o último a entrar e não exigiu nenhuma linha de alteração na limpeza.</p>
+  </section>
+
+  <section class="secao" id="ingestao">
+    <p class="secao-num">05 · Ingestão e normalização</p>
+    <h2>Do texto cru ao registro estruturado</h2>
+    <p class="intro">Escolha qualquer uma das demandas para ver como ela chegou, o que o leitor tirou dela e como ficou depois da limpeza. A página abre no exemplo dos slides: a mensagem de WhatsApp da Frota Pampa.</p>
+
+    <div class="controles">
+      <label for="seletor-registro">Demanda</label>
+      <select id="seletor-registro"></select>
+      <button class="botao" type="button" id="anterior">Anterior</button>
+      <button class="botao" type="button" id="proximo">Próxima</button>
+      <a href="#ingestao" id="exemplo">voltar ao exemplo do slide</a>
+    </div>
+
+    <p class="destino" id="destino-registro" aria-live="polite"></p>
+
+    <div class="explorador">
+      <div>
+        <h3>Como chegou <span class="apagado" id="canal-registro"></span></h3>
+        <pre class="trecho" id="trecho-registro"></pre>
+      </div>
+      <div>
+        <h3>Campo a campo</h3>
+        <div class="rolagem">
+          <table id="tabela-registro">
+            <thead><tr><th>Campo</th><th>Como veio</th><th>Como ficou</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <p class="nota-rodape"><i class="mk mk-mudou"></i>linha marcada: o valor foi transformado na limpeza</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao" id="descartes">
+    <p class="secao-num">06 · Exclusão direcionada</p>
+    <h2>Nenhum registro some em silêncio</h2>
+    <p class="intro">Toda exclusão é gravada com id, canal e motivo em <code>descartes.csv</code>. A pergunta “por que essa demanda não está na programação?” passa a ter resposta.</p>
+    <div class="medidores" id="motivos"></div>
+    <p class="frase" id="frase-descartes"></p>
+    <div class="rolagem">
+      <table id="tabela-descartes" class="tabela-curta">
+        <thead><tr><th>Demanda</th><th>Canal</th><th>Motivo</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="secao" id="crm">
+    <p class="secao-num">07 · Vínculo com o CRM</p>
+    <h2>Cada demanda ligada a um cliente do cadastro</h2>
+    <p class="intro">Primeiro pelo CNPJ, que é exato. Sem CNPJ válido, pela razão social, comparando as palavras dos nomes (<code>difflib</code>). Abaixo do limiar a demanda fica sem cliente e vai para curadoria manual.</p>
+    <div class="segmentos" id="segmentos" role="img"></div>
+    <ul class="legenda" id="legenda-segmentos"></ul>
+
+    <h3>Calibração do limiar de similaridade</h3>
+    <p class="intro">Cada linha é uma demanda da base que não achou o cliente pelo CNPJ, com o candidato mais parecido do cadastro e a nota de 0 a 1. <span id="frase-limiar"></span> Conferimos na mão os nomes perto do limiar: “Transp Rodosul” é a Transportadora Rodosul e “Transportes Boa Vista” não está no cadastro.</p>
+    <div>
+      <div>
+        <ul class="legenda">
+          <li><i class="mk seg-nome"></i>vinculado pelo nome</li>
+          <li><i class="mk seg-sem"></i>abaixo do limiar (curadoria)</li>
+          <li><i class="mk mk-linha"></i>limiar <span data-limiar>0,75</span></li>
+        </ul>
+        <div class="notas" id="notas">
+          <div class="notas-cab"><span>Nome na demanda → melhor candidato</span><span class="lim"><span>limiar <span data-limiar>0,75</span></span></span><span class="num">Nota</span></div>
+        </div>
+      </div>
+      <div class="calibracao-resumo">
+        <table id="tabela-calibracao" class="tabela-curta">
+          <thead><tr><th class="num">Limiar</th><th class="num">Vinculados pelo nome</th><th class="num">Sem vínculo</th></tr></thead>
+          <tbody></tbody>
+        </table>
+        <p class="nota-rodape">Em destaque o limiar usado. Entre 0,60 e 0,75 o resultado não muda: é o vão entre o nome errado mais parecido e o nome certo menos parecido.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao" id="base">
+    <p class="secao-num">08 · Base final</p>
+    <h2>Base unificada</h2>
+    <p class="intro">As <span data-funil="base">103</span> demandas que passaram, já limpas e com o vínculo do CRM. É essa camada de dados que o modelo de IA vai usar depois. Clique no código de uma demanda para ver o antes e depois dela.</p>
+    <div class="filtros">
+      <label>Canal <select id="filtro-canal"><option value="">Todos</option></select></label>
+      <label>Vínculo
+        <select id="filtro-vinculo">
+          <option value="">Todos</option>
+          <option value="CNPJ">Pelo CNPJ</option>
+          <option value="FUZZY">Pelo nome</option>
+          <option value="SEM_MATCH">Sem vínculo</option>
+        </select>
+      </label>
+      <label>Buscar <input type="search" id="filtro-busca" placeholder="cliente, cidade ou código"></label>
+    </div>
+    <p class="contador" id="contador-base" aria-live="polite"></p>
+    <div class="tabela-alta">
+      <table id="tabela-base">
+        <thead>
+          <tr><th>Demanda</th><th>Canal</th><th>Cliente</th><th>Origem</th><th>Destino</th><th>Tipo</th><th class="num">Unid.</th><th class="num">Peso (kg)</th><th class="num">Frete (R$)</th><th>Coleta</th><th>Status</th><th>Vínculo</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <h3>Arquivos</h3>
+    <div class="arquivos">
+      <div>
+        <p class="apagado">Saídas do pipeline</p>
+        <ul id="arquivos-saida"></ul>
+      </div>
+      <div>
+        <p class="apagado">Dados brutos de exemplo (um arquivo de cada canal)</p>
+        <ul id="arquivos-brutos"></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao" id="limitacoes">
+    <p class="secao-num">09 · Limitações e próximos passos</p>
+    <h2>O que ainda não resolvemos</h2>
+    <ol class="limitacoes">
+      <li><strong>Parser de texto livre</strong>Mensagem de WhatsApp sem template nem sempre traz a rota completa; é daí que vêm os 6 descartes por rota. Próximo passo: extração com NER ou LLM, validada contra o esquema.</li>
+      <li><strong>Limiar calibrado em base pequena</strong>Com 8 clientes a chance de colisão é baixa. Com centenas, vai precisar de curva de precisão e recall sobre pares rotulados.</li>
+      <li><strong>Ambiguidade de data sem solução no código</strong>05/04/2026 não tem leitura certa. Essas datas ficam marcadas como ambíguas; a correção real é cada canal informar o formato (locale), combinado com quem emite a fonte.</li>
+      <li><strong>Sem carga incremental</strong>O pipeline reprocessa o lote inteiro. Em produção precisaria de marca d’água e idempotência por <code>id_demanda</code>.</li>
+    </ol>
+  </section>
+
+</main>
+
+<footer class="rodape">
+  <div class="largura">
+    <p>Os dados desta página são fictícios. Foram montados para reproduzir os problemas que vimos nos canais (grafias diferentes, formatos misturados, CNPJ cortado, reenvio de webhook). Os nomes das empresas são inventados e os CNPJs foram sorteados só para passar na conta do dígito verificador.</p>
+    <p>Código: <a href="https://github.com/viniciussoaresback-pixel/BUG-FREE">github.com/viniciussoaresback-pixel/BUG-FREE</a> · esta página é gerada pelo <code>main.py</code>.</p>
+  </div>
+</footer>
+
+<script src="dados.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

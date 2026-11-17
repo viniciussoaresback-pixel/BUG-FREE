@@ -19,7 +19,20 @@ pip install -r requirements.txt
 python main.py
 ```
 
-Os resultados vao para a pasta `output/`. Para rodar os testes: `python -m pytest`.
+Os resultados vao para a pasta `output/` e a pagina (`site/`) e atualizada junto.
+Para rodar os testes: `python -m pytest`.
+
+## Pagina (Netlify)
+
+A pasta `site/` e uma pagina estatica com o resultado do pipeline: funil, auditoria,
+antes e depois de cada demanda, descartes, vinculo com o CRM e a base final. Para ver no
+computador e so abrir o `site/index.html` no navegador.
+
+O Netlify nao roda Python, entao quem gera os dados da pagina e o `main.py`
+(`exportar_site.py` escreve o `site/dados.js` e copia os CSVs para `site/arquivos/`).
+O `netlify.toml` na raiz do repositorio ja diz para o Netlify publicar essa pasta, sem build.
+Depois de mudar alguma coisa: rodar `python main.py`, fazer commit e push; o Netlify
+publica de novo sozinho.
 
 ## Estrutura
 
@@ -38,7 +51,9 @@ auditoria.py             03 - mede a bagunca antes de corrigir
 normalizacao.py          04 - limpeza e exclusao direcionada
 crm.py                   05 - vinculo por CNPJ e depois por razao social (fuzzy)
 main.py                  roda tudo e gera a base final (06)
-tests/                   testes das regras de limpeza
+exportar_site.py         monta os dados da pagina (site/dados.js)
+site/                    pagina com os resultados (e o que o Netlify publica)
+tests/                   testes das regras de limpeza e da pagina
 ferramentas/             script que gerou os dados ficticios de raw/
 ```
 
